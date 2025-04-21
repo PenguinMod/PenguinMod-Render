@@ -481,7 +481,7 @@ class RenderWebGL extends EventEmitter {
         this._backgroundColor4f[0] = red;
         this._backgroundColor4f[1] = green;
         this._backgroundColor4f[2] = blue;
-        this._backgroundColor4f[3] = alpha;
+        this._backgroundColor4f[3] = alpha ?? 1;
 
         this._backgroundColor3b[0] = red * 255;
         this._backgroundColor3b[1] = green * 255;
