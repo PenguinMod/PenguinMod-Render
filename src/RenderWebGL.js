@@ -2449,6 +2449,7 @@ class RenderWebGL extends EventEmitter {
             if (opts.filter && !opts.filter(drawableID)) continue;
 
             const drawable = this._allDrawables[drawableID];
+            if (!drawable) continue;
 
             const uniforms = {};
             if (!this.renderOffscreen && drawable.uniformApplied) {
