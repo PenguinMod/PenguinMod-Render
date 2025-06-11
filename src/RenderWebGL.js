@@ -1016,9 +1016,10 @@ class RenderWebGL extends EventEmitter {
 
     skinWasAltered (skin) {
         // This is very hot function.
-        for (let i = 0; i < this._allDrawables.length; i++) {
-            const drawable = this._allDrawables[i];
-            if (drawable && drawable._skin === skin) {
+        for (let i = 0; i < this._drawList.length; i++) {Add commentMore actions
+            const drawableId = this._drawList[i];
+            const drawable = this._allDrawables[drawableId];
+            if (drawable._skin === skin) {
                 drawable._skinWasAltered();
             }
         }
