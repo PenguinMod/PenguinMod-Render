@@ -105,6 +105,7 @@ class TextBubbleSkin extends Skin {
         this._pointsLeft = pointsLeft;
         if (typeof props === 'object') this._props = props
 
+        this._restyleCanvas();
         this._textDirty = true;
         this._textureDirty = true;
         this.emitWasAltered();
