@@ -20,10 +20,10 @@ const float epsilon = 1e-3;
 uniform mat4 u_projectionMatrix;
 uniform mat4 u_modelMatrix;
 attribute vec2 a_texCoord;
-#ifdef ENABLE_horizontalShear
+#ifdef ENABLE_horizontal_shear
 uniform float u_horizontalShear;
 #endif
-#ifdef ENABLE_verticalShear
+#ifdef ENABLE_vertical_shear
 uniform float u_verticalShear;
 #endif
 #endif
@@ -84,11 +84,11 @@ void main() {
 	#else
 	float x = a_position.x;
 	float y = a_position.y;
-	#ifdef ENABLE_horizontalShear
+	#ifdef ENABLE_horizontal_shear
 	if (y < 0.0)
 		x += u_horizontalShear;
 	#endif
-	#ifdef ENABLE_verticalShear
+	#ifdef ENABLE_vertical_shear
 	if (x < 0.0)
 		y += u_verticalShear;
 	#endif
