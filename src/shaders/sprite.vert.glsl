@@ -85,11 +85,11 @@ void main() {
 	float x = a_position.x;
 	float y = a_position.y;
 	#ifdef ENABLE_horizontal_shear
-	if (y < 0.0)
+	if (a_position.y < 0.0)
 		x += u_horizontalShear;
 	#endif
 	#ifdef ENABLE_vertical_shear
-	if (x < 0.0)
+	if (a_position.x < 0.0)
 		y += u_verticalShear;
 	#endif
 	gl_Position = u_projectionMatrix * u_modelMatrix * vec4(x,y, 0, 1);
