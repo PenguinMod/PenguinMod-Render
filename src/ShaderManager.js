@@ -181,7 +181,19 @@ ShaderManager.EFFECT_INFO = {
         mask: 1 << 12,
         converter: x => x - 1,
         shapeChanges: false
-    }
+    },
+    horizontalShear: {
+        uniformName: 'u_horizontalShear',
+        mask: 1 << 13,
+        converter: x => x,
+        shapeChanges: true
+    },
+    verticalShear: {
+        uniformName: 'u_verticalShear',
+        mask: 1 << 14,
+        converter: x => x,
+        shapeChanges: true
+    },
 };
 
 /**
