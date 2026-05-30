@@ -50,10 +50,10 @@ uniform float u_saturation;
 #ifdef ENABLE_tintColor
 uniform highp float u_tintColor;
 #endif // ENABLE_tintColor
-#if defined(ENABLE_repeatX)
+#if defined(ENABLE_repeat_x)
 uniform float u_repeatX;
 #endif
-#if defined(ENABLE_repeatY)
+#if defined(ENABLE_repeat_y)
 uniform float u_repeatY;
 #endif
 
@@ -191,17 +191,17 @@ void main()
 	}
 	#endif // ENABLE_fisheye
 	
-	#ifdef ENABLE_repeatX
+	#ifdef ENABLE_repeat_x
 	{
 		if (u_repeatX != 1.0) texcoord0.x = fract(texcoord0.x * u_repeatX);
 	}
-	#endif // ENABLE_repeatX
+	#endif // ENABLE_repeat_x
 
-	#ifdef ENABLE_repeatY
+	#ifdef ENABLE_repeat_y
 	{
 		if (u_repeatY != 1.0) texcoord0.y = fract(texcoord0.y * u_repeatY);
 	}
-	#endif // ENABLE_repeatY
+	#endif // ENABLE_repeat_y
 
 	gl_FragColor = texture2D(u_skin, texcoord0);
 

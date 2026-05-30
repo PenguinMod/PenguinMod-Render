@@ -26,10 +26,10 @@ uniform float u_horizontalShear;
 #ifdef ENABLE_vertical_shear
 uniform float u_verticalShear;
 #endif
-#if defined(ENABLE_repeatX)
+#if defined(ENABLE_repeat_x)
 uniform float u_repeatX;
 #endif
-#if defined(ENABLE_repeatY)
+#if defined(ENABLE_repeat_y)
 uniform float u_repeatY;
 #endif
 #endif
@@ -90,11 +90,11 @@ void main() {
 	#else
 	float x = a_position.x;
 	float y = a_position.y;
-	#if defined(ENABLE_repeatX)
+	#if defined(ENABLE_repeat_x)
 	if (x < 0.0 && u_repeatX != 1.0)
 		x = 0.5 - u_repeatX;
 	#endif
-	#if defined(ENABLE_repeatY)
+	#if defined(ENABLE_repeat_y)
 	if (y < 0.0 && u_repeatY != 1.0)
 		y = 0.5 - u_repeatY;
 	#endif
