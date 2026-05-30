@@ -50,6 +50,12 @@ uniform float u_saturation;
 #ifdef ENABLE_tintColor
 uniform highp float u_tintColor;
 #endif // ENABLE_tintColor
+#if defined(ENABLE_repeatX)
+uniform float u_repeatX;
+#endif
+#if defined(ENABLE_repeatY)
+uniform float u_repeatY;
+#endif
 
 #ifdef DRAW_MODE_line
 varying vec4 v_lineColor;
@@ -184,6 +190,18 @@ void main()
 		texcoord0 = kCenter + r * unit * kCenter;
 	}
 	#endif // ENABLE_fisheye
+	
+	#ifdef ENABLE_repeatX
+	{
+		if (u_repeatX != 1.0) texcoord0.x = fract(texcoord0.x * u_repeatX);
+	}
+	#endif // ENABLE_repeatX
+
+	#ifdef ENABLE_repeatY
+	{
+		if (u_repeatY != 1.0) texcoord0.y = fract(texcoord0.y * u_repeatY);
+	}
+	#endif // ENABLE_repeatY
 
 	gl_FragColor = texture2D(u_skin, texcoord0);
 

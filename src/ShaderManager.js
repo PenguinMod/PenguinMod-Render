@@ -194,6 +194,18 @@ ShaderManager.EFFECT_INFO = {
         converter: x => x / 10,
         shapeChanges: true
     },
+    repeat_x: {
+        uniformName: 'u_repeatX',
+        mask: 1 << 15,
+        converter: x => x,
+        shapeChanges: true
+    },
+    repeat_y: {
+        uniformName: 'u_repeatY',
+        mask: 1 << 16,
+        converter: x => x,
+        shapeChanges: true
+    },
 };
 
 /**
